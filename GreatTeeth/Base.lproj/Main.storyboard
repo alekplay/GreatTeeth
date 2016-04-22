@@ -14,11 +14,12 @@
                         <viewControllerLayoutGuide type="bottom" id="j5P-hx-NRb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="or6-fc-iWK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="pA8-ue-1e0"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Cf-Q5-dnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
