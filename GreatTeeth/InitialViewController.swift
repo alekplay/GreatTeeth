@@ -20,7 +20,7 @@ class InitialViewController: UIViewController {
         let color2 = UIColor(red:32/255.0, green:107/255.0, blue:133/255.0, alpha:1.0).CGColor as CGColorRef
         gradientLayer.colors = [color1, color2]
         gradientLayer.locations = [0.0, 1.0]
-        view.layer.addSublayer(gradientLayer)
+        view.layer.insertSublayer(gradientLayer, atIndex: 0)
         
         // Remove navigation bar border
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
