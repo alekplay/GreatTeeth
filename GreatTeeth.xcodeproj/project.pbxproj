@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		287780E01CC9B5BF0084F161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287780DF1CC9B5BF0084F161 /* AppDelegate.swift */; };
-		287780E21CC9B5BF0084F161 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287780E11CC9B5BF0084F161 /* ViewController.swift */; };
 		287780E51CC9B5BF0084F161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287780E31CC9B5BF0084F161 /* Main.storyboard */; };
 		287780E81CC9B5BF0084F161 /* GreatTeeth.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 287780E61CC9B5BF0084F161 /* GreatTeeth.xcdatamodeld */; };
 		287780EA1CC9B5BF0084F161 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 287780E91CC9B5BF0084F161 /* Assets.xcassets */; };
 		287780ED1CC9B5BF0084F161 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287780EB1CC9B5BF0084F161 /* LaunchScreen.storyboard */; };
+		287780F51CC9B64B0084F161 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287780F41CC9B64B0084F161 /* InitialViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		287780DC1CC9B5BF0084F161 /* GreatTeeth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreatTeeth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		287780DF1CC9B5BF0084F161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		287780E11CC9B5BF0084F161 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		287780E41CC9B5BF0084F161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		287780E71CC9B5BF0084F161 /* GreatTeeth.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GreatTeeth.xcdatamodel; sourceTree = "<group>"; };
 		287780E91CC9B5BF0084F161 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		287780EC1CC9B5BF0084F161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		287780EE1CC9B5BF0084F161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		287780F41CC9B64B0084F161 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				287780DF1CC9B5BF0084F161 /* AppDelegate.swift */,
-				287780E11CC9B5BF0084F161 /* ViewController.swift */,
+				287780F41CC9B64B0084F161 /* InitialViewController.swift */,
 				287780E31CC9B5BF0084F161 /* Main.storyboard */,
 				287780E91CC9B5BF0084F161 /* Assets.xcassets */,
 				287780EB1CC9B5BF0084F161 /* LaunchScreen.storyboard */,
@@ -138,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				287780E21CC9B5BF0084F161 /* ViewController.swift in Sources */,
+				287780F51CC9B64B0084F161 /* InitialViewController.swift in Sources */,
 				287780E81CC9B5BF0084F161 /* GreatTeeth.xcdatamodeld in Sources */,
 				287780E01CC9B5BF0084F161 /* AppDelegate.swift in Sources */,
 			);
