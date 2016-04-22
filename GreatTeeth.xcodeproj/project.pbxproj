@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		287780E01CC9B5BF0084F161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287780DF1CC9B5BF0084F161 /* AppDelegate.swift */; };
+		287780E21CC9B5BF0084F161 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287780E11CC9B5BF0084F161 /* ViewController.swift */; };
+		287780E51CC9B5BF0084F161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287780E31CC9B5BF0084F161 /* Main.storyboard */; };
+		287780E81CC9B5BF0084F161 /* GreatTeeth.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 287780E61CC9B5BF0084F161 /* GreatTeeth.xcdatamodeld */; };
+		287780EA1CC9B5BF0084F161 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 287780E91CC9B5BF0084F161 /* Assets.xcassets */; };
+		287780ED1CC9B5BF0084F161 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287780EB1CC9B5BF0084F161 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		287780DC1CC9B5BF0084F161 /* GreatTeeth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreatTeeth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		287780DF1CC9B5BF0084F161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		287780E11CC9B5BF0084F161 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		287780E41CC9B5BF0084F161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		287780E71CC9B5BF0084F161 /* GreatTeeth.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GreatTeeth.xcdatamodel; sourceTree = "<group>"; };
+		287780E91CC9B5BF0084F161 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		287780EC1CC9B5BF0084F161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		287780EE1CC9B5BF0084F161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		287780D91CC9B5BF0084F161 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		287780D31CC9B5BF0084F161 = {
+			isa = PBXGroup;
+			children = (
+				287780DE1CC9B5BF0084F161 /* GreatTeeth */,
+				287780DD1CC9B5BF0084F161 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		287780DD1CC9B5BF0084F161 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				287780DC1CC9B5BF0084F161 /* GreatTeeth.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		287780DE1CC9B5BF0084F161 /* GreatTeeth */ = {
+			isa = PBXGroup;
+			children = (
+				287780DF1CC9B5BF0084F161 /* AppDelegate.swift */,
+				287780E11CC9B5BF0084F161 /* ViewController.swift */,
+				287780E31CC9B5BF0084F161 /* Main.storyboard */,
+				287780E91CC9B5BF0084F161 /* Assets.xcassets */,
+				287780EB1CC9B5BF0084F161 /* LaunchScreen.storyboard */,
+				287780EE1CC9B5BF0084F161 /* Info.plist */,
+				287780E61CC9B5BF0084F161 /* GreatTeeth.xcdatamodeld */,
+			);
+			path = GreatTeeth;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		287780DB1CC9B5BF0084F161 /* GreatTeeth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 287780F11CC9B5BF0084F161 /* Build configuration list for PBXNativeTarget "GreatTeeth" */;
+			buildPhases = (
+				287780D81CC9B5BF0084F161 /* Sources */,
+				287780D91CC9B5BF0084F161 /* Frameworks */,
+				287780DA1CC9B5BF0084F161 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GreatTeeth;
+			productName = GreatTeeth;
+			productReference = 287780DC1CC9B5BF0084F161 /* GreatTeeth.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		287780D41CC9B5BF0084F161 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Aleksander Skjoelsvik";
+				TargetAttributes = {
+					287780DB1CC9B5BF0084F161 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 287780D71CC9B5BF0084F161 /* Build configuration list for PBXProject "GreatTeeth" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 287780D31CC9B5BF0084F161;
+			productRefGroup = 287780DD1CC9B5BF0084F161 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				287780DB1CC9B5BF0084F161 /* GreatTeeth */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		287780DA1CC9B5BF0084F161 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				287780ED1CC9B5BF0084F161 /* LaunchScreen.storyboard in Resources */,
+				287780EA1CC9B5BF0084F161 /* Assets.xcassets in Resources */,
+				287780E51CC9B5BF0084F161 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		287780D81CC9B5BF0084F161 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				287780E21CC9B5BF0084F161 /* ViewController.swift in Sources */,
+				287780E81CC9B5BF0084F161 /* GreatTeeth.xcdatamodeld in Sources */,
+				287780E01CC9B5BF0084F161 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		287780E31CC9B5BF0084F161 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				287780E41CC9B5BF0084F161 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		287780EB1CC9B5BF0084F161 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				287780EC1CC9B5BF0084F161 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		287780EF1CC9B5BF0084F161 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		287780F01CC9B5BF0084F161 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		287780F21CC9B5BF0084F161 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GreatTeeth/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.aleksanders.GreatTeeth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		287780F31CC9B5BF0084F161 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GreatTeeth/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.aleksanders.GreatTeeth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		287780D71CC9B5BF0084F161 /* Build configuration list for PBXProject "GreatTeeth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				287780EF1CC9B5BF0084F161 /* Debug */,
+				287780F01CC9B5BF0084F161 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		287780F11CC9B5BF0084F161 /* Build configuration list for PBXNativeTarget "GreatTeeth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				287780F21CC9B5BF0084F161 /* Debug */,
+				287780F31CC9B5BF0084F161 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		287780E61CC9B5BF0084F161 /* GreatTeeth.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				287780E71CC9B5BF0084F161 /* GreatTeeth.xcdatamodel */,
+			);
+			currentVersion = 287780E71CC9B5BF0084F161 /* GreatTeeth.xcdatamodel */;
+			path = GreatTeeth.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 287780D41CC9B5BF0084F161 /* Project object */;
+}
