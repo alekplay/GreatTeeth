@@ -3,9 +3,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Initial View Controller-->
+        <!--GREAT TEETH-->
         <scene sceneID="8O6-rE-p7V">
             <objects>
                 <viewController id="1My-Ca-vvo" customClass="InitialViewController" customModule="GreatTeeth" customModuleProvider="target" sceneMemberID="viewController">
@@ -14,11 +15,35 @@
                         <viewControllerLayoutGuide type="bottom" id="j5P-hx-NRb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="or6-fc-iWK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McM-nC-9lL">
+                                <rect key="frame" x="20" y="462" width="560" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="2Tr-qm-Qp9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Start Brushing" backgroundImage="Start Brush Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14901960784313725" green="0.55686274509803924" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="j5P-hx-NRb" firstAttribute="top" secondItem="McM-nC-9lL" secondAttribute="bottom" constant="20" id="2i2-TP-WQm"/>
+                            <constraint firstItem="McM-nC-9lL" firstAttribute="trailing" secondItem="or6-fc-iWK" secondAttribute="trailingMargin" id="8RH-Zh-yQF"/>
+                            <constraint firstItem="McM-nC-9lL" firstAttribute="leading" secondItem="or6-fc-iWK" secondAttribute="leadingMargin" id="Uge-1d-AyE"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pA8-ue-1e0"/>
+                    <navigationItem key="navigationItem" title="GREAT TEETH" id="pA8-ue-1e0">
+                        <barButtonItem key="leftBarButtonItem" title="Tips" id="8dB-as-iHV">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="GEb-f6-bwW">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Cf-Q5-dnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -29,9 +54,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zS3-9p-WjA" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FUu-sN-0ik">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="FUu-sN-0ik">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.23921568627450979" green="0.74117647058823533" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -43,4 +73,7 @@
             <point key="canvasLocation" x="598" y="403"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Start Brush Button" width="327" height="54"/>
+    </resources>
 </document>
