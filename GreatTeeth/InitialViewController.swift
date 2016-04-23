@@ -117,4 +117,8 @@ class InitialViewController: UIViewController {
             pauseButton?.setTitle("Pause Timer", forState: .Normal)
         }
     }
+    
+    @IBAction func skipButtonDidPress() {
+        ActivityTracker.sharedInstance.skipToNext()
+    }
 }
