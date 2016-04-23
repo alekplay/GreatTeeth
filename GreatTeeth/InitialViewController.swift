@@ -20,6 +20,8 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var skipButton: UIButton?
     @IBOutlet weak var startButton: UIButton?
     @IBOutlet weak var progressBarImageView: UIImageView?
+    @IBOutlet weak var settingsButton: UIBarButtonItem!
+    @IBOutlet weak var tipsButton: UIBarButtonItem!
     
     // MARK: Initialization
     
@@ -38,7 +40,6 @@ class InitialViewController: UIViewController {
         // Remove navigation bar border
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        
     }
     
     func prepareInterfaceForActivityType(type: ActivityType) {
@@ -61,6 +62,17 @@ class InitialViewController: UIViewController {
         }
     }
     
+    func setUpAsInitial() {
+        directionsLabel?.hidden = true
+        progressBarImageView?.image = UIImage(named: "Progress Bar 1")
+        timerLabel?.text = "00"
+        startButton?.hidden = false
+        pauseButton?.hidden = true
+        skipButton?.hidden = true
+        navigationItem.setRightBarButtonItem(settingsButton, animated: true)
+        navigationItem.setRightBarButtonItem(tipsButton, animated: true)
+    }
+    
     // MARK: Lifecycle
     
     func updateViewForTime(time: Int, percentage: Float, type: ActivityType, remainingRepetitions: Int, finished: Bool) {
@@ -73,6 +85,7 @@ class InitialViewController: UIViewController {
                 ActivityTracker.sharedInstance.startActivityForType(newActivityType, andCallback: updateViewForTime)
             } else {
                 performSegueWithIdentifier("PresentSummaryVC", sender: self)
+                setUpAsInitial()
             }
         } else if type == .Brushing {
             switch remainingRepetitions {
