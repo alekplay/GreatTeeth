@@ -47,7 +47,7 @@ class ActivityTracker: NSObject {
             callback(remainingTime, Float(remainingTime) / Float(activityDurations[currentActivity]!), currentActivity, remainingRepetitions, remainingRepetitions == 0)
         }
         
-        if currentTime == activityDurations[currentActivity] {
+        if currentTime >= activityDurations[currentActivity] {
             if currentRepetition >= activityRepetitions[currentActivity] {
                 timer.invalidate()
                 loopCallback = nil
@@ -77,5 +77,9 @@ class ActivityTracker: NSObject {
     
     func isPaused() -> Bool {
         return !timer.valid
+    }
+    
+    func skipToNext() {
+        currentTime = activityDurations[currentActivity]! - 1
     }
 }
