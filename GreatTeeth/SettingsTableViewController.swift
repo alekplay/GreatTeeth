@@ -106,8 +106,6 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.tableView.backgroundColor = UIColor(red: 200.0/255, green: 243.0/255, blue: 243.0/255, alpha: 1)
-
         // Add background gradient
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
@@ -120,8 +118,7 @@ class SettingsTableViewController: UITableViewController {
         // Remove navigation bar border
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        
-        self.navigationController?.navigationBar.tintColor=UIColor.whiteColor()
+
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -12,6 +12,7 @@ class TipsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Add background gradient
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
@@ -24,8 +25,7 @@ class TipsViewController: UIViewController {
         // Remove navigation bar border
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        
-        self.navigationController?.navigationBar.tintColor=UIColor.whiteColor()
+
     }
     
     @IBAction func doneButtonDidPress() {

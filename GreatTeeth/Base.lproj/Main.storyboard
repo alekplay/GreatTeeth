@@ -176,10 +176,13 @@
         <scene sceneID="VVZ-dV-wnc">
             <objects>
                 <navigationController id="IOf-3e-oRa" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qwb-dj-0uc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Qwb-dj-0uc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.23921568630000001" green="0.74117647060000003" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="eqv-CY-pcQ" kind="relationship" relationship="rootViewController" id="0Th-hD-vJh"/>
@@ -373,14 +376,14 @@
             <objects>
                 <tableViewController title="Settings" id="eqv-CY-pcQ" customClass="SettingsTableViewController" customModule="Great_Teeth" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="82L-wj-cEh">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="Brushing reminders" id="aLR-Pp-U93">
                                 <cells>
                                     <tableViewCell opaque="NO" clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="morningReminders" id="l3l-wP-uCG">
-                                        <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l3l-wP-uCG" id="xki-Te-hrX">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -405,7 +408,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="eveningReminders" id="abc-cN-GbE">
-                                        <rect key="frame" x="0.0" y="157.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="93.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="abc-cN-GbE" id="Fi7-bf-Vmv">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -434,7 +437,7 @@
                             <tableViewSection headerTitle="Brush replacement" footerTitle="Dental professionals recommend replacing your brush head every 12-16 weeks!" id="sco-GV-7Gi">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="setReplacement" id="QOg-sC-1Dd">
-                                        <rect key="frame" x="0.0" y="251.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="187.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QOg-sC-1Dd" id="2IO-Sr-AR4">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -458,7 +461,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ijp-1g-ZQa">
-                                        <rect key="frame" x="0.0" y="295.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="231.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ijp-1g-ZQa" id="QrL-dH-aIA">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -488,7 +491,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7fb-0W-SnA">
-                                        <rect key="frame" x="0.0" y="339.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="275.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7fb-0W-SnA" id="5YC-Xn-IyO">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -560,17 +563,17 @@
                         <viewControllerLayoutGuide type="bottom" id="b8Y-lS-lMM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fiy-he-tzk">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Morning reminder time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNf-Fj-v90">
-                                <rect key="frame" x="213" y="89" width="174" height="21"/>
+                                <rect key="frame" x="213" y="25" width="174" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndr-bf-217">
-                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <rect key="frame" x="200" y="168" width="200" height="200"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="U4n-Gu-C4Z"/>
@@ -614,8 +617,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="E1y-qd-dsg"/>
                                 <exclude reference="5e1-pT-g89"/>
+                                <exclude reference="E1y-qd-dsg"/>
                                 <exclude reference="rfJ-V9-Gfd"/>
                                 <exclude reference="C8Q-pN-Ofi"/>
                             </mask>
@@ -640,11 +643,11 @@
                         <viewControllerLayoutGuide type="bottom" id="GsM-w7-Jjk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0s6-kh-ixU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="oYM-4x-vGn">
-                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <rect key="frame" x="200" y="168" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="idR-Q2-Xsx"/>
                                     <constraint firstAttribute="width" constant="200" id="unA-JE-aF9"/>
@@ -668,7 +671,7 @@
                                 </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evening reminder time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeW-My-kbT">
-                                <rect key="frame" x="214.5" y="89" width="171" height="21"/>
+                                <rect key="frame" x="214" y="25" width="171" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -701,11 +704,11 @@
                         <viewControllerLayoutGuide type="bottom" id="WE5-LB-Mus"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7lA-ry-u6h">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="1" maxValue="26" translatesAutoresizingMaskIntoConstraints="NO" id="kcf-RK-5Ns">
-                                <rect key="frame" x="188" y="285" width="224" height="31"/>
+                                <rect key="frame" x="188" y="253" width="224" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="LwN-bD-fNT"/>
                                 </constraints>
@@ -714,7 +717,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8K-zz-avh">
-                                <rect key="frame" x="300" y="265" width="0.0" height="0.0"/>
+                                <rect key="frame" x="300" y="233" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -742,10 +745,13 @@
         <scene sceneID="Ug5-O7-oBy">
             <objects>
                 <navigationController id="fRw-ev-Nrp" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="36F-59-MTh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="36F-59-MTh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.23921568630000001" green="0.74117647060000003" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="i5a-Fw-LAU" kind="relationship" relationship="rootViewController" id="7k2-TY-scx"/>
@@ -764,9 +770,58 @@
                         <viewControllerLayoutGuide type="bottom" id="e8J-Dj-eIL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5vN-JK-Bmq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Replace brush head every three months" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Y0-xy-jYB">
+                                <rect key="frame" x="20" y="20" width="560" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brush your teeth twice a day" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbU-V1-HZo">
+                                <rect key="frame" x="20" y="52" width="560" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Floss thoroughly" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-ol-XYU">
+                                <rect key="frame" x="20" y="84" width="560" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rinse mouth with mouthwash to kill bacteria" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYa-hI-ADe">
+                                <rect key="frame" x="20" y="116" width="560" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spend 30 seconds on each section of the mouth" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKt-9x-QVf">
+                                <rect key="frame" x="20" y="148" width="560" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.55686274509803924" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="FYa-hI-ADe" firstAttribute="leading" secondItem="5vN-JK-Bmq" secondAttribute="leadingMargin" id="3w5-ye-Bpq"/>
+                            <constraint firstItem="HbU-V1-HZo" firstAttribute="top" secondItem="4Y0-xy-jYB" secondAttribute="bottom" constant="8" id="4dl-ag-cgn"/>
+                            <constraint firstItem="mKt-9x-QVf" firstAttribute="trailing" secondItem="5vN-JK-Bmq" secondAttribute="trailingMargin" id="9ds-mz-abK"/>
+                            <constraint firstItem="mKt-9x-QVf" firstAttribute="top" secondItem="FYa-hI-ADe" secondAttribute="bottom" constant="8" id="KBq-2P-V09"/>
+                            <constraint firstItem="HbU-V1-HZo" firstAttribute="trailing" secondItem="5vN-JK-Bmq" secondAttribute="trailingMargin" id="RKI-ic-21G"/>
+                            <constraint firstItem="e7j-ol-XYU" firstAttribute="leading" secondItem="5vN-JK-Bmq" secondAttribute="leadingMargin" id="SKg-He-2II"/>
+                            <constraint firstItem="4Y0-xy-jYB" firstAttribute="leading" secondItem="5vN-JK-Bmq" secondAttribute="leadingMargin" id="YlZ-0U-ysZ"/>
+                            <constraint firstItem="e7j-ol-XYU" firstAttribute="trailing" secondItem="5vN-JK-Bmq" secondAttribute="trailingMargin" id="fme-uP-8M4"/>
+                            <constraint firstItem="FYa-hI-ADe" firstAttribute="trailing" secondItem="5vN-JK-Bmq" secondAttribute="trailingMargin" id="g05-eC-qlI"/>
+                            <constraint firstItem="FYa-hI-ADe" firstAttribute="top" secondItem="e7j-ol-XYU" secondAttribute="bottom" constant="8" id="hjf-gn-UaU"/>
+                            <constraint firstItem="mKt-9x-QVf" firstAttribute="leading" secondItem="5vN-JK-Bmq" secondAttribute="leadingMargin" id="ivk-mg-KCa"/>
+                            <constraint firstItem="e7j-ol-XYU" firstAttribute="top" secondItem="HbU-V1-HZo" secondAttribute="bottom" constant="8" id="lTR-lW-58g"/>
+                            <constraint firstItem="4Y0-xy-jYB" firstAttribute="top" secondItem="T6b-pR-NmE" secondAttribute="bottom" constant="20" id="sc0-he-Uxm"/>
+                            <constraint firstItem="4Y0-xy-jYB" firstAttribute="trailing" secondItem="5vN-JK-Bmq" secondAttribute="trailingMargin" id="ut4-AH-zJs"/>
+                            <constraint firstItem="HbU-V1-HZo" firstAttribute="leading" secondItem="5vN-JK-Bmq" secondAttribute="leadingMargin" id="wDb-VV-k73"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tips" id="nP8-3n-fgF">
                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="liw-rT-qN4">
