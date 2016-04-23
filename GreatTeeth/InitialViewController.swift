@@ -10,6 +10,19 @@ import UIKit
 
 class InitialViewController: UIViewController {
     
+    // MARK: Properties
+    
+    // MARK: Outlets
+    
+    @IBOutlet weak var timerLabel: UILabel?
+    @IBOutlet weak var directionsLabel: UILabel?
+    @IBOutlet weak var pauseButton: UIButton?
+    @IBOutlet weak var skipButton: UIButton?
+    @IBOutlet weak var startButton: UIButton?
+    @IBOutlet weak var progressBarImageView: UIImageView?
+    
+    // MARK: Initialization
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,5 +40,81 @@ class InitialViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
     }
-
+    
+    func prepareInterfaceForActivityType(type: ActivityType) {
+        switch type {
+        case .Brushing:
+            directionsLabel?.hidden = false
+            progressBarImageView?.image = UIImage(named: "Progress Bar 2")
+            skipButton?.setTitle("Skip Section", forState: .Normal)
+            break
+        case .Flossing:
+            directionsLabel?.hidden = true
+            progressBarImageView?.image = UIImage(named: "Progress Bar 3")
+            skipButton?.setTitle("Skip Activity", forState: .Normal)
+            break
+        case .Rinsing:
+            directionsLabel?.hidden = true
+            progressBarImageView?.image = UIImage(named: "Progress Bar 4")
+            skipButton?.setTitle("Finish", forState: .Normal)
+            break
+        }
+    }
+    
+    // MARK: Lifecycle
+    
+    func updateViewForTime(time: Int, percentage: Float, type: ActivityType, remainingRepetitions: Int, finished: Bool) {
+        timerLabel!.text = String(time)
+        // update activity indicator
+        
+        if finished && time == 0 {
+            if let newActivityType = ActivityType(rawValue: type.rawValue + 1) {
+                prepareInterfaceForActivityType(newActivityType)
+                ActivityTracker.sharedInstance.startActivityForType(newActivityType, andCallback: updateViewForTime)
+            } else {
+                performSegueWithIdentifier("PresentSummaryVC", sender: self)
+            }
+        } else if type == .Brushing {
+            switch remainingRepetitions {
+            case 0:
+                directionsLabel?.text = "Lower Right Section"
+                break
+            case 1:
+                directionsLabel?.text = "Lower Left Section"
+                break
+            case 2:
+                directionsLabel?.text = "Upper Right Section"
+                break
+            case 3:
+                directionsLabel?.text = "Upper Left Section"
+                break
+            default:
+                directionsLabel?.text = ""
+                break
+            }
+        }
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func startBrushingButtonDidPress() {
+        navigationItem.setRightBarButtonItems(nil, animated: true)
+        navigationItem.setLeftBarButtonItems(nil, animated: true)
+        pauseButton?.hidden = false
+        skipButton?.hidden = false
+        startButton?.hidden = true
+        
+        prepareInterfaceForActivityType(ActivityType.Brushing)
+        ActivityTracker.sharedInstance.startActivityForType(ActivityType.Brushing, andCallback: updateViewForTime)
+    }
+    
+    @IBAction func pauseButtonDidPress() {
+        if !ActivityTracker.sharedInstance.isPaused() {
+            ActivityTracker.sharedInstance.pauseTimer()
+            pauseButton?.setTitle("Resume", forState: .Normal)
+        } else {
+            ActivityTracker.sharedInstance.resumeTimer()
+            pauseButton?.setTitle("Pause Timer", forState: .Normal)
+        }
+    }
 }
