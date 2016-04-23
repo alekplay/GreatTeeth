@@ -73,10 +73,11 @@ class InitialViewController: UIViewController {
         startButton?.hidden = false
         pauseButton?.hidden = true
         skipButton?.hidden = true
-        navigationItem.setRightBarButtonItem(settingsButton, animated: true)
-        navigationItem.setRightBarButtonItem(tipsButton, animated: true)
+        settingsButton.enabled = true
+        settingsButton.tintColor = UIColor.whiteColor()
+        tipsButton.enabled = true
+        tipsButton.tintColor = UIColor.whiteColor()
         circularProgressView?.animateToAngle(0.0, duration: 0.5, completion: nil)
-
     }
     
     // MARK: Lifecycle
@@ -131,8 +132,10 @@ class InitialViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func startBrushingButtonDidPress() {
-        navigationItem.setRightBarButtonItems(nil, animated: true)
-        navigationItem.setLeftBarButtonItems(nil, animated: true)
+        settingsButton.enabled = false
+        settingsButton.tintColor = UIColor.clearColor()
+        tipsButton.enabled = false
+        tipsButton.tintColor = UIColor.clearColor()
         pauseButton?.hidden = false
         skipButton?.hidden = false
         startButton?.hidden = true

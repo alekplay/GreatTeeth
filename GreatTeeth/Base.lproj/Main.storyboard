@@ -153,9 +153,11 @@
                         <outlet property="directionsLabel" destination="X0s-jc-RyN" id="WFh-Jf-GJ0"/>
                         <outlet property="pauseButton" destination="LDV-B2-X3I" id="ydv-Tu-iwG"/>
                         <outlet property="progressBarImageView" destination="g6M-i3-f4V" id="Ryv-gx-dyS"/>
+                        <outlet property="settingsButton" destination="GEb-f6-bwW" id="jyP-tI-3BZ"/>
                         <outlet property="skipButton" destination="7J2-pq-xFC" id="ACb-4x-CJM"/>
                         <outlet property="startButton" destination="McM-nC-9lL" id="4k5-5r-lgg"/>
                         <outlet property="timerLabel" destination="F6d-bu-UU0" id="XpQ-o7-c00"/>
+                        <outlet property="tipsButton" destination="8dB-as-iHV" id="7LG-bB-qMg"/>
                         <segue destination="LAv-Yf-qaU" kind="presentation" identifier="PresentSummaryVC" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="2af-Gc-uEZ"/>
                     </connections>
                 </viewController>
