@@ -31,8 +31,8 @@
                                     <action selector="startBrushingButtonDidPress" destination="1My-Ca-vvo" eventType="touchUpInside" id="J5b-ZL-3vT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6d-bu-UU0">
-                                <rect key="frame" x="261.5" y="229" width="77" height="77"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6d-bu-UU0">
+                                <rect key="frame" x="280.5" y="229" width="39" height="77"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="64"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -160,8 +160,8 @@
                                         <constraint firstAttribute="height" constant="150" id="tbV-ni-gWn"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twice a day for two weeks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ou1-xK-eVo">
-                                    <rect key="frame" x="136" y="278" width="327" height="34"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twice a day for two weeks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ou1-xK-eVo">
+                                    <rect key="frame" x="8" y="278" width="584" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -240,6 +240,7 @@
                                 <constraint firstItem="ToE-fa-27H" firstAttribute="top" secondItem="Ou1-xK-eVo" secondAttribute="bottom" constant="24" id="CUy-LK-r2v"/>
                                 <constraint firstItem="sf4-LH-e8s" firstAttribute="top" secondItem="Knr-Zx-X0I" secondAttribute="bottom" constant="16" id="DgO-kx-Gh6"/>
                                 <constraint firstItem="Ou1-xK-eVo" firstAttribute="centerX" secondItem="b4p-7T-TmR" secondAttribute="centerX" id="EFT-n1-39V"/>
+                                <constraint firstItem="Ou1-xK-eVo" firstAttribute="leading" secondItem="b4p-7T-TmR" secondAttribute="leadingMargin" id="Fgf-rh-BoJ"/>
                                 <constraint firstItem="G2W-hg-JeC" firstAttribute="centerX" secondItem="b4p-7T-TmR" secondAttribute="centerX" id="K83-ca-N2H"/>
                                 <constraint firstItem="Knr-Zx-X0I" firstAttribute="top" secondItem="g2c-3J-De7" secondAttribute="bottom" constant="16" id="QI1-9S-EBM"/>
                                 <constraint firstItem="Yyt-DX-rdm" firstAttribute="top" secondItem="6hd-cT-fbk" secondAttribute="bottom" constant="24" id="WzO-ob-VCh"/>
@@ -255,9 +256,15 @@
                                 <constraint firstItem="6hd-cT-fbk" firstAttribute="top" secondItem="b4p-7T-TmR" secondAttribute="top" constant="64" id="obo-8G-3H1"/>
                                 <constraint firstItem="R4e-zS-JV3" firstAttribute="top" secondItem="b4p-7T-TmR" secondAttribute="top" constant="22" id="opa-a1-vYK"/>
                                 <constraint firstItem="g2c-3J-De7" firstAttribute="top" secondItem="G2W-hg-JeC" secondAttribute="bottom" constant="16" id="otj-Ns-rqc"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="Ou1-xK-eVo" secondAttribute="trailing" id="qoQ-l4-SuQ"/>
                                 <constraint firstItem="6hd-cT-fbk" firstAttribute="centerX" secondItem="b4p-7T-TmR" secondAttribute="centerX" id="wie-6v-PlD"/>
                                 <constraint firstItem="sf4-LH-e8s" firstAttribute="leading" secondItem="b4p-7T-TmR" secondAttribute="leading" constant="16" id="zRv-eM-Kbc"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="EFT-n1-39V"/>
+                                </mask>
+                            </variation>
                         </view>
                         <blurEffect style="dark"/>
                     </visualEffectView>

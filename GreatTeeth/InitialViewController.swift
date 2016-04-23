@@ -84,6 +84,19 @@ class InitialViewController: UIViewController {
                 prepareInterfaceForActivityType(newActivityType)
                 ActivityTracker.sharedInstance.startActivityForType(newActivityType, andCallback: updateViewForTime)
             } else {
+                var sessionsThisWeek = NSUserDefaults.standardUserDefaults().integerForKey("sessionsThisWeek")
+                var sessionsTotal = NSUserDefaults.standardUserDefaults().integerForKey("sessionsTotal")
+                var timeTotal = NSUserDefaults.standardUserDefaults().integerForKey("timeTotal")
+                
+                sessionsTotal += 1
+                sessionsThisWeek += 1
+                timeTotal += 3
+                
+                NSUserDefaults.standardUserDefaults().setInteger(sessionsThisWeek, forKey: "sessionsThisWeek")
+                NSUserDefaults.standardUserDefaults().setInteger(sessionsTotal, forKey: "sessionsTotal")
+                NSUserDefaults.standardUserDefaults().setInteger(timeTotal, forKey: "timeTotal")
+                
+                
                 performSegueWithIdentifier("PresentSummaryVC", sender: self)
                 setUpAsInitial()
             }
