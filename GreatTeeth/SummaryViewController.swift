@@ -27,7 +27,7 @@ class SummaryViewController: UIViewController {
         
         sessionsThisWeekLabel?.text = String(sessionsThisWeek)
         sessionsTotalLabel?.text = String(sessionsTotal)
-        timeTotalLabel?.text = String(timeTotal)
+        timeTotalLabel?.text = String(timeTotal) + " minutes"
         
         if sessionsTotal == 1 {
             achievementNameLabel?.text = "First recorded session"

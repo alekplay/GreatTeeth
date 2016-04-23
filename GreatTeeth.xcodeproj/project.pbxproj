@@ -15,6 +15,7 @@
 		287780F51CC9B64B0084F161 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287780F41CC9B64B0084F161 /* InitialViewController.swift */; };
 		287BEFEC1CCB282E00852F95 /* ActivityTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287BEFEB1CCB282E00852F95 /* ActivityTracker.swift */; };
 		287BEFEE1CCBFA7100852F95 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287BEFED1CCBFA7100852F95 /* SummaryViewController.swift */; };
+		287BEFF01CCC1B3500852F95 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287BEFEF1CCC1B3500852F95 /* KDCircularProgress.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		287780F41CC9B64B0084F161 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		287BEFEB1CCB282E00852F95 /* ActivityTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTracker.swift; sourceTree = "<group>"; };
 		287BEFED1CCBFA7100852F95 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		287BEFEF1CCC1B3500852F95 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		287780DE1CC9B5BF0084F161 /* GreatTeeth */ = {
 			isa = PBXGroup;
 			children = (
+				287BEFF11CCC1B3A00852F95 /* Libraries */,
 				287BEFE71CCB20D600852F95 /* Models */,
 				287BEFE61CCB20D000852F95 /* Controllers */,
 				287BEFE81CCB20DD00852F95 /* XIBs */,
@@ -111,6 +114,14 @@
 				287780E61CC9B5BF0084F161 /* GreatTeeth.xcdatamodeld */,
 			);
 			name = Storage;
+			sourceTree = "<group>";
+		};
+		287BEFF11CCC1B3A00852F95 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				287BEFEF1CCC1B3500852F95 /* KDCircularProgress.swift */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				287BEFF01CCC1B3500852F95 /* KDCircularProgress.swift in Sources */,
 				287780F51CC9B64B0084F161 /* InitialViewController.swift in Sources */,
 				287BEFEC1CCB282E00852F95 /* ActivityTracker.swift in Sources */,
 				287780E81CC9B5BF0084F161 /* GreatTeeth.xcdatamodeld in Sources */,

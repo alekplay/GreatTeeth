@@ -22,6 +22,7 @@ class InitialViewController: UIViewController {
     @IBOutlet weak var progressBarImageView: UIImageView?
     @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var tipsButton: UIBarButtonItem!
+    @IBOutlet weak var circularProgressView: KDCircularProgress?
     
     // MARK: Initialization
     
@@ -40,6 +41,9 @@ class InitialViewController: UIViewController {
         // Remove navigation bar border
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        // Reset angle of progress view
+        circularProgressView?.angle = 0
     }
     
     func prepareInterfaceForActivityType(type: ActivityType) {
@@ -65,19 +69,22 @@ class InitialViewController: UIViewController {
     func setUpAsInitial() {
         directionsLabel?.hidden = true
         progressBarImageView?.image = UIImage(named: "Progress Bar 1")
-        timerLabel?.text = "00"
+        timerLabel?.text = "0"
         startButton?.hidden = false
         pauseButton?.hidden = true
         skipButton?.hidden = true
         navigationItem.setRightBarButtonItem(settingsButton, animated: true)
         navigationItem.setRightBarButtonItem(tipsButton, animated: true)
+        circularProgressView?.animateToAngle(0.0, duration: 0.5, completion: nil)
+
     }
     
     // MARK: Lifecycle
     
     func updateViewForTime(time: Int, percentage: Float, type: ActivityType, remainingRepetitions: Int, finished: Bool) {
         timerLabel!.text = String(time)
-        // update activity indicator
+        
+        circularProgressView?.animateToAngle(Double(360.0 * (1 - percentage)), duration: 0.5, completion: nil)
         
         if finished && time == 0 {
             if let newActivityType = ActivityType(rawValue: type.rawValue + 1) {
