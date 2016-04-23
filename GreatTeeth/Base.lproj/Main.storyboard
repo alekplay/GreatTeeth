@@ -3,13 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--GREAT TEETH-->
         <scene sceneID="8O6-rE-p7V">
             <objects>
-                <viewController id="1My-Ca-vvo" customClass="InitialViewController" customModule="GreatTeeth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1My-Ca-vvo" customClass="InitialViewController" customModule="Great_Teeth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7hk-s4-BDm"/>
                         <viewControllerLayoutGuide type="bottom" id="j5P-hx-NRb"/>
@@ -72,7 +73,7 @@
                                     <constraint firstAttribute="height" constant="35" id="s2i-GG-Hza"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAM-mj-RoI" customClass="KDCircularProgress" customModule="GreatTeeth" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAM-mj-RoI" customClass="KDCircularProgress" customModule="Great_Teeth" customModuleProvider="target">
                                 <rect key="frame" x="177" y="156" width="247" height="247"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SECONDS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbe-C2-vab">
@@ -143,9 +144,15 @@
                     <navigationItem key="navigationItem" title="GREAT TEETH" id="pA8-ue-1e0">
                         <barButtonItem key="leftBarButtonItem" title="Tips" id="8dB-as-iHV">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="fRw-ev-Nrp" kind="presentation" id="fPE-vU-rDl"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="GEb-f6-bwW">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="IOf-3e-oRa" kind="presentation" id="WsU-Ah-vBb"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -165,10 +172,27 @@
             </objects>
             <point key="canvasLocation" x="1308" y="403"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VVZ-dV-wnc">
+            <objects>
+                <navigationController id="IOf-3e-oRa" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qwb-dj-0uc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.23921568630000001" green="0.74117647060000003" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="eqv-CY-pcQ" kind="relationship" relationship="rootViewController" id="0Th-hD-vJh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hcU-63-0Up" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1308" y="-316"/>
+        </scene>
         <!--Summary View Controller-->
         <scene sceneID="ASB-vA-jn9">
             <objects>
-                <viewController id="LAv-Yf-qaU" customClass="SummaryViewController" customModule="GreatTeeth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LAv-Yf-qaU" customClass="SummaryViewController" customModule="Great_Teeth" customModuleProvider="target" sceneMemberID="viewController">
                     <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="8LK-HL-Tyd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -343,6 +367,419 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5cE-1K-qQN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="598" y="403"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="ME1-CY-kyo">
+            <objects>
+                <tableViewController title="Settings" id="eqv-CY-pcQ" customClass="SettingsTableViewController" customModule="Great_Teeth" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="82L-wj-cEh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Brushing reminders" id="aLR-Pp-U93">
+                                <cells>
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" alpha="0.30000001192092896" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="morningReminders" id="l3l-wP-uCG">
+                                        <rect key="frame" x="0.0" y="113.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l3l-wP-uCG" id="xki-Te-hrX">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Morning reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQO-hR-Ax1">
+                                                    <rect key="frame" x="13" y="8" width="145" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="NQO-hR-Ax1" secondAttribute="bottom" id="T4l-JQ-8Bo"/>
+                                                <constraint firstItem="NQO-hR-Ax1" firstAttribute="leading" secondItem="xki-Te-hrX" secondAttribute="leadingMargin" constant="5" id="aEr-Cq-E8F"/>
+                                                <constraint firstItem="NQO-hR-Ax1" firstAttribute="top" secondItem="xki-Te-hrX" secondAttribute="topMargin" id="nWu-BD-a5T"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="srQ-xj-rdi" kind="show" identifier="setMorning" id="Tkg-7A-dLh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="eveningReminders" id="abc-cN-GbE">
+                                        <rect key="frame" x="0.0" y="157.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="abc-cN-GbE" id="Fi7-bf-Vmv">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evening reminders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQm-jS-eap">
+                                                    <rect key="frame" x="13" y="8" width="142" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="pQm-jS-eap" secondAttribute="bottom" id="4hR-dq-Wwz"/>
+                                                <constraint firstItem="pQm-jS-eap" firstAttribute="leading" secondItem="Fi7-bf-Vmv" secondAttribute="leadingMargin" constant="5" id="cF7-yQ-8pb"/>
+                                                <constraint firstItem="pQm-jS-eap" firstAttribute="top" secondItem="Fi7-bf-Vmv" secondAttribute="topMargin" id="d19-Qw-2g5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="vV3-2y-a9K" kind="show" identifier="setEvening" id="LMi-cc-8wN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Brush replacement" footerTitle="Dental professionals recommend replacing your brush head every 12-16 weeks!" id="sco-GV-7Gi">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="setReplacement" id="QOg-sC-1Dd">
+                                        <rect key="frame" x="0.0" y="251.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QOg-sC-1Dd" id="2IO-Sr-AR4">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set brush head replacement reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9L7-fG-U9n">
+                                                    <rect key="frame" x="13" y="8" width="289" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="9L7-fG-U9n" secondAttribute="bottom" id="0f4-7j-bvT"/>
+                                                <constraint firstItem="9L7-fG-U9n" firstAttribute="leading" secondItem="2IO-Sr-AR4" secondAttribute="leadingMargin" constant="5" id="ChE-ew-03p"/>
+                                                <constraint firstItem="9L7-fG-U9n" firstAttribute="top" secondItem="2IO-Sr-AR4" secondAttribute="topMargin" id="HZN-yQ-k0D"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="O9b-S8-GBz" kind="show" identifier="timeTillReplacement" id="6KH-Ld-XoY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ijp-1g-ZQa">
+                                        <rect key="frame" x="0.0" y="295.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ijp-1g-ZQa" id="QrL-dH-aIA">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last replaced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiF-0O-5A4">
+                                                    <rect key="frame" x="13" y="8" width="104" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8q-UR-blD">
+                                                    <rect key="frame" x="577" y="8" width="0.0" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.40264008620000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="i8q-UR-blD" secondAttribute="trailing" constant="15" id="CZY-u3-NIk"/>
+                                                <constraint firstItem="IiF-0O-5A4" firstAttribute="top" secondItem="QrL-dH-aIA" secondAttribute="topMargin" id="Qwf-Qc-bcZ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="i8q-UR-blD" secondAttribute="bottom" id="XQ1-IM-QAB"/>
+                                                <constraint firstItem="IiF-0O-5A4" firstAttribute="leading" secondItem="QrL-dH-aIA" secondAttribute="leadingMargin" constant="5" id="a0G-pm-JMq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="IiF-0O-5A4" secondAttribute="bottom" id="jus-6B-H67"/>
+                                                <constraint firstItem="i8q-UR-blD" firstAttribute="top" secondItem="QrL-dH-aIA" secondAttribute="topMargin" id="vIj-lE-Ax0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7fb-0W-SnA">
+                                        <rect key="frame" x="0.0" y="339.5" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7fb-0W-SnA" id="5YC-Xn-IyO">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ne-g0-7Wh">
+                                                    <rect key="frame" x="13" y="8" width="152" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Replace brush head"/>
+                                                    <connections>
+                                                        <action selector="replaceBrushHead:" destination="eqv-CY-pcQ" eventType="touchUpInside" id="xOp-An-haF"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kro-fX-QQe">
+                                                    <rect key="frame" x="577" y="8" width="0.0" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.40264008620000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="8ne-g0-7Wh" secondAttribute="bottom" id="GCX-7k-G5m"/>
+                                                <constraint firstItem="8ne-g0-7Wh" firstAttribute="top" secondItem="5YC-Xn-IyO" secondAttribute="topMargin" id="Ihk-xb-vIt"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="kro-fX-QQe" secondAttribute="bottom" id="P23-NV-Txr"/>
+                                                <constraint firstItem="kro-fX-QQe" firstAttribute="top" secondItem="5YC-Xn-IyO" secondAttribute="topMargin" id="VmI-0r-QN4"/>
+                                                <constraint firstItem="8ne-g0-7Wh" firstAttribute="leading" secondItem="5YC-Xn-IyO" secondAttribute="leadingMargin" constant="5" id="oY7-Ry-7AJ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kro-fX-QQe" secondAttribute="trailing" constant="15" id="wMk-eN-Op5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES" notEnabled="YES"/>
+                                        </accessibility>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="eqv-CY-pcQ" id="DUe-MC-z86"/>
+                            <outlet property="delegate" destination="eqv-CY-pcQ" id="wfN-Jb-1WI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="6AH-jh-Kki">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="OfG-bd-rAf">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="doneButtonDidPress" destination="eqv-CY-pcQ" id="lcK-BU-QDh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="replacementDate" destination="i8q-UR-blD" id="aYh-c3-MfA"/>
+                        <outlet property="toBeReplaced" destination="kro-fX-QQe" id="Fvi-kt-x3H"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xh8-OO-muG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationBar contentMode="scaleToFill" id="Suv-zX-O4T">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                </navigationBar>
+            </objects>
+            <point key="canvasLocation" x="2032" y="-316"/>
+        </scene>
+        <!--setMorningViewController-->
+        <scene sceneID="Xa4-99-nPv">
+            <objects>
+                <viewController title="setMorningViewController" id="srQ-xj-rdi" customClass="setMorningViewController" customModule="Great_Teeth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W5j-SD-KPA"/>
+                        <viewControllerLayoutGuide type="bottom" id="b8Y-lS-lMM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fiy-he-tzk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Morning reminder time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNf-Fj-v90">
+                                <rect key="frame" x="213" y="89" width="174" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndr-bf-217">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="U4n-Gu-C4Z"/>
+                                    <constraint firstAttribute="height" constant="200" id="VRB-z6-e5R"/>
+                                    <constraint firstAttribute="width" secondItem="Ndr-bf-217" secondAttribute="height" multiplier="75:67" id="geM-DA-xxa"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="483071790.975492">
+                                    <!--2016-04-23 02:36:30 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978274800">
+                                    <!--1970-01-01 09:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="-978238800">
+                                    <!--1970-01-01 19:00:00 +0000-->
+                                </date>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="geM-DA-xxa"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="changeMorningAlert:" destination="srQ-xj-rdi" eventType="valueChanged" id="ESb-lH-Ta3"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.5568627451" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ndr-bf-217" firstAttribute="centerY" secondItem="Fiy-he-tzk" secondAttribute="centerY" id="30f-Aa-VvJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ndr-bf-217" secondAttribute="trailing" id="5e1-pT-g89"/>
+                            <constraint firstItem="eNf-Fj-v90" firstAttribute="centerX" secondItem="Fiy-he-tzk" secondAttribute="centerX" id="9iG-K0-qHU"/>
+                            <constraint firstItem="b8Y-lS-lMM" firstAttribute="top" secondItem="Ndr-bf-217" secondAttribute="bottom" id="C8Q-pN-Ofi"/>
+                            <constraint firstItem="Ndr-bf-217" firstAttribute="leading" secondItem="Fiy-he-tzk" secondAttribute="leadingMargin" id="E1y-qd-dsg"/>
+                            <constraint firstItem="Ndr-bf-217" firstAttribute="centerX" secondItem="Fiy-he-tzk" secondAttribute="centerX" id="G6T-Wf-0MT"/>
+                            <constraint firstItem="eNf-Fj-v90" firstAttribute="top" secondItem="W5j-SD-KPA" secondAttribute="bottom" constant="25" id="iZb-jS-Bku"/>
+                            <constraint firstItem="Ndr-bf-217" firstAttribute="top" secondItem="W5j-SD-KPA" secondAttribute="bottom" id="rfJ-V9-Gfd"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="E1y-qd-dsg"/>
+                                <exclude reference="5e1-pT-g89"/>
+                                <exclude reference="rfJ-V9-Gfd"/>
+                                <exclude reference="C8Q-pN-Ofi"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Morning Reminder" id="Zdz-At-Ilp"/>
+                    <connections>
+                        <outlet property="morningAlert" destination="Ndr-bf-217" id="l71-wh-Xeo"/>
+                        <outlet property="morningAlertLabel" destination="eNf-Fj-v90" id="DXY-5G-hcX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RCJ-W4-4dH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2756" y="-1029"/>
+        </scene>
+        <!--setEveningViewController-->
+        <scene sceneID="utM-oD-y2d">
+            <objects>
+                <viewController title="setEveningViewController" id="vV3-2y-a9K" customClass="setEveningViewController" customModule="Great_Teeth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DCU-fW-DN2"/>
+                        <viewControllerLayoutGuide type="bottom" id="GsM-w7-Jjk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0s6-kh-ixU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="oYM-4x-vGn">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="idR-Q2-Xsx"/>
+                                    <constraint firstAttribute="width" constant="200" id="unA-JE-aF9"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="483074033.00895298">
+                                    <!--2016-04-23 03:13:53 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978224400">
+                                    <!--1970-01-01 23:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="-978118200">
+                                    <!--1970-01-03 04:30:00 +0000-->
+                                </date>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="changeEveningAlert:" destination="vV3-2y-a9K" eventType="valueChanged" id="Ijf-PR-g89"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evening reminder time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeW-My-kbT">
+                                <rect key="frame" x="214.5" y="89" width="171" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.5568627451" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="oYM-4x-vGn" firstAttribute="centerX" secondItem="0s6-kh-ixU" secondAttribute="centerX" id="898-Mm-Rf9"/>
+                            <constraint firstItem="oYM-4x-vGn" firstAttribute="centerY" secondItem="0s6-kh-ixU" secondAttribute="centerY" id="I6o-BC-IWY"/>
+                            <constraint firstItem="WeW-My-kbT" firstAttribute="centerX" secondItem="0s6-kh-ixU" secondAttribute="centerX" id="QE7-JT-AKX"/>
+                            <constraint firstItem="WeW-My-kbT" firstAttribute="top" secondItem="DCU-fW-DN2" secondAttribute="bottom" constant="25" id="zyL-nu-wOf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Evening reminder" id="5cj-Ug-Lcn"/>
+                    <connections>
+                        <outlet property="eveningAlert" destination="oYM-4x-vGn" id="b6u-Oc-35v"/>
+                        <outlet property="eveningAlertLabel" destination="WeW-My-kbT" id="xU0-ha-wTo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zzV-1d-Kpz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2756" y="-316"/>
+        </scene>
+        <!--timeTillReplacement-->
+        <scene sceneID="C6X-vo-FpE">
+            <objects>
+                <viewController title="timeTillReplacement" id="O9b-S8-GBz" customClass="timeTillReplacementViewController" customModule="Great_Teeth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SCY-Cb-nuF"/>
+                        <viewControllerLayoutGuide type="bottom" id="WE5-LB-Mus"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7lA-ry-u6h">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="1" maxValue="26" translatesAutoresizingMaskIntoConstraints="NO" id="kcf-RK-5Ns">
+                                <rect key="frame" x="188" y="285" width="224" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="LwN-bD-fNT"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="valueChanged:" destination="O9b-S8-GBz" eventType="valueChanged" id="rTx-cY-iWU"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8K-zz-avh">
+                                <rect key="frame" x="300" y="265" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.5568627451" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="kcf-RK-5Ns" firstAttribute="centerY" secondItem="7lA-ry-u6h" secondAttribute="centerY" id="W0p-Qo-rQS"/>
+                            <constraint firstItem="q8K-zz-avh" firstAttribute="centerX" secondItem="7lA-ry-u6h" secondAttribute="centerX" id="WgZ-P5-qFR"/>
+                            <constraint firstItem="kcf-RK-5Ns" firstAttribute="centerX" secondItem="7lA-ry-u6h" secondAttribute="centerX" id="evL-l8-lO5"/>
+                            <constraint firstItem="kcf-RK-5Ns" firstAttribute="top" secondItem="q8K-zz-avh" secondAttribute="bottom" constant="20" id="iWh-uV-R7Q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Brush Replacement Time" id="Gae-ID-1k2"/>
+                    <connections>
+                        <outlet property="sliderValue" destination="kcf-RK-5Ns" id="y9x-10-qpt"/>
+                        <outlet property="timeTillReplacementLabel" destination="q8K-zz-avh" id="IKg-RC-Onx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gdx-Yc-YZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2756" y="403"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ug5-O7-oBy">
+            <objects>
+                <navigationController id="fRw-ev-Nrp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="36F-59-MTh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.23921568630000001" green="0.74117647060000003" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="i5a-Fw-LAU" kind="relationship" relationship="rootViewController" id="7k2-TY-scx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CVH-3V-Z48" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1308" y="1132"/>
+        </scene>
+        <!--Tips-->
+        <scene sceneID="eea-gA-Bu5">
+            <objects>
+                <viewController id="i5a-Fw-LAU" customClass="TipsViewController" customModule="Great_Teeth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T6b-pR-NmE"/>
+                        <viewControllerLayoutGuide type="bottom" id="e8J-Dj-eIL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5vN-JK-Bmq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.14901960784313725" green="0.55686274509803924" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tips" id="nP8-3n-fgF">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="liw-rT-qN4">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="doneButtonDidPress" destination="i5a-Fw-LAU" id="rdK-Cr-mYV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CGW-nR-Acp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2032" y="1132"/>
         </scene>
     </scenes>
     <resources>

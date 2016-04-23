@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		286508C11CCC289B007C363F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286508C01CCC289B007C363F /* SettingsTableViewController.swift */; };
+		286508C51CCC2907007C363F /* SetEveningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286508C21CCC2907007C363F /* SetEveningViewController.swift */; };
+		286508C61CCC2907007C363F /* SetMorningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286508C31CCC2907007C363F /* SetMorningViewController.swift */; };
+		286508C71CCC2907007C363F /* TimeTillReplacementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286508C41CCC2907007C363F /* TimeTillReplacementViewController.swift */; };
+		286508C91CCC2A8F007C363F /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286508C81CCC2A8F007C363F /* TipsViewController.swift */; };
 		287780E01CC9B5BF0084F161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287780DF1CC9B5BF0084F161 /* AppDelegate.swift */; };
 		287780E51CC9B5BF0084F161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287780E31CC9B5BF0084F161 /* Main.storyboard */; };
 		287780E81CC9B5BF0084F161 /* GreatTeeth.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 287780E61CC9B5BF0084F161 /* GreatTeeth.xcdatamodeld */; };
@@ -19,6 +24,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		286508C01CCC289B007C363F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		286508C21CCC2907007C363F /* SetEveningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetEveningViewController.swift; sourceTree = "<group>"; };
+		286508C31CCC2907007C363F /* SetMorningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetMorningViewController.swift; sourceTree = "<group>"; };
+		286508C41CCC2907007C363F /* TimeTillReplacementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTillReplacementViewController.swift; sourceTree = "<group>"; };
+		286508C81CCC2A8F007C363F /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		287780DC1CC9B5BF0084F161 /* Great Teeth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Great Teeth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		287780DF1CC9B5BF0084F161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		287780E41CC9B5BF0084F161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +87,11 @@
 			children = (
 				287780F41CC9B64B0084F161 /* InitialViewController.swift */,
 				287BEFED1CCBFA7100852F95 /* SummaryViewController.swift */,
+				286508C01CCC289B007C363F /* SettingsTableViewController.swift */,
+				286508C21CCC2907007C363F /* SetEveningViewController.swift */,
+				286508C31CCC2907007C363F /* SetMorningViewController.swift */,
+				286508C41CCC2907007C363F /* TimeTillReplacementViewController.swift */,
+				286508C81CCC2A8F007C363F /* TipsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -195,12 +210,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				286508C91CCC2A8F007C363F /* TipsViewController.swift in Sources */,
+				286508C51CCC2907007C363F /* SetEveningViewController.swift in Sources */,
+				286508C71CCC2907007C363F /* TimeTillReplacementViewController.swift in Sources */,
 				287BEFF01CCC1B3500852F95 /* KDCircularProgress.swift in Sources */,
 				287780F51CC9B64B0084F161 /* InitialViewController.swift in Sources */,
 				287BEFEC1CCB282E00852F95 /* ActivityTracker.swift in Sources */,
 				287780E81CC9B5BF0084F161 /* GreatTeeth.xcdatamodeld in Sources */,
+				286508C61CCC2907007C363F /* SetMorningViewController.swift in Sources */,
 				287780E01CC9B5BF0084F161 /* AppDelegate.swift in Sources */,
 				287BEFEE1CCBFA7100852F95 /* SummaryViewController.swift in Sources */,
+				286508C11CCC289B007C363F /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
