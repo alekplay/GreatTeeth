@@ -29,7 +29,18 @@ class SummaryViewController: UIViewController {
         sessionsTotalLabel?.text = String(sessionsTotal)
         timeTotalLabel?.text = String(timeTotal)
         
-        
+        if sessionsTotal == 1 {
+            achievementNameLabel?.text = "First recorded session"
+        } else if sessionsThisWeek == 14 {
+            achievementNameLabel?.text = "Twice a day for a week"
+        } else if sessionsThisWeek == 14 && sessionsTotal == 28 {
+            achievementNameLabel?.text = "Twice a day for two weeks"
+        } else if sessionsThisWeek == 14 && sessionsTotal == 56 {
+            achievementNameLabel?.text = "Twice a day for a month"
+        } else {
+            statusLabel?.text = "TIP"
+            achievementNameLabel?.text = "Replace brush every three months"
+        }
     }
     
     @IBAction func closeButtonDidPress() {
@@ -37,7 +48,7 @@ class SummaryViewController: UIViewController {
     }
     
     @IBAction func shareButtonDidPress() {
-        let activityViewController = UIActivityViewController(activityItems: ["hello world"], applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [achievementNameLabel!.text!], applicationActivities: nil)
         presentViewController(activityViewController, animated: true, completion: nil)
     }
     
