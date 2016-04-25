@@ -64,7 +64,9 @@ class InitialViewController: UIViewController {
             skipButton?.setTitle("Finish", forState: .Normal)
             break
         }
+        
     }
+    
     
     func setUpAsInitial() {
         directionsLabel?.hidden = true
