@@ -16,7 +16,7 @@ class ActivityTracker: NSObject {
     
     // MARK: Properties
     
-    let activityDurations = [ActivityType.Brushing: 5, ActivityType.Flossing: 10, ActivityType.Rinsing: 10]
+    let activityDurations = [ActivityType.Brushing: 30, ActivityType.Flossing: 60, ActivityType.Rinsing: 30]
     let activityRepetitions = [ActivityType.Brushing: 4, ActivityType.Flossing: 1, ActivityType.Rinsing: 1]
     
     var currentActivity: ActivityType = .Brushing
