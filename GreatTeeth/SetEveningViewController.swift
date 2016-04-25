@@ -17,9 +17,19 @@ class setEveningViewController: UIViewController {
         let dateFormatterEvening = NSDateFormatter()
         dateFormatterEvening.dateFormat = "HH:mm"
         let strDateEvening = "You have selected " + dateFormatterEvening.stringFromDate(eveningAlert.date)
+        print(eveningAlert.date)
         self.eveningAlertLabel.text = strDateEvening
         NSUserDefaults.standardUserDefaults().setObject(eveningAlert.date, forKey: "storedEveningAlert")
         NSUserDefaults.standardUserDefaults().setObject(dateFormatterEvening.stringFromDate(eveningAlert.date), forKey: "Evening Alert")
+        let notification = UILocalNotification()
+        notification.fireDate = eveningAlert.date
+        notification.alertBody = "Hey, it's time to brush your teeth"
+        notification.alertAction = "slide to view"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.repeatInterval = NSCalendarUnit.Day
+        
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
         
     }
     
@@ -64,6 +74,10 @@ class setEveningViewController: UIViewController {
     }
     
 
+
+
+    
+    
     /*
     // MARK: - Navigation
 

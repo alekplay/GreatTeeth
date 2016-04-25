@@ -54,12 +54,12 @@ class InitialViewController: UIViewController {
             skipButton?.setTitle("Skip Section", forState: .Normal)
             break
         case .Flossing:
-            directionsLabel?.hidden = true
+            directionsLabel?.hidden = false
             progressBarImageView?.image = UIImage(named: "Progress Bar 3")
             skipButton?.setTitle("Skip Activity", forState: .Normal)
             break
         case .Rinsing:
-            directionsLabel?.hidden = true
+            directionsLabel?.hidden = false
             progressBarImageView?.image = UIImage(named: "Progress Bar 4")
             skipButton?.setTitle("Finish", forState: .Normal)
             break
@@ -126,6 +126,12 @@ class InitialViewController: UIViewController {
                 directionsLabel?.text = ""
                 break
             }
+            } else if type == .Flossing {
+                directionsLabel?.text = "Floss!"
+            } else if type == .Rinsing {
+                directionsLabel?.text = "Rinse!"
+                
+            
         }
     }
     
