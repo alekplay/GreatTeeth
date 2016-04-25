@@ -98,6 +98,7 @@ class SettingsTableViewController: UITableViewController {
                     toBeReplaced.text="-"
                 } else if daysToAdd < 182 {
                     toBeReplaced.text=String(month) + "/" + String(day) + "/" + String(year)
+                    self.scheduleLocal(futureDate!)
                 }
             }
         }
@@ -128,5 +129,25 @@ class SettingsTableViewController: UITableViewController {
     @IBAction func doneButtonDidPress() {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    func scheduleLocal(date:NSDate) {
+        let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
+        
+        if settings!.types == .None {
+            let ac = UIAlertController(title: "Can't schedule", message: "Either we don't have permission to schedule notifications, or we haven't asked yet.", preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(ac, animated: true, completion: nil)
+            return
+        }
+        
+        let notification = UILocalNotification()
+        notification.fireDate = date
+        notification.alertBody = "Hey, it's time to replace your brushhead"
+        notification.alertAction = "slide to view"
+        notification.soundName = UILocalNotificationDefaultSoundName
+    
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    }
+    
 
 }

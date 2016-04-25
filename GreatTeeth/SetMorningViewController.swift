@@ -20,6 +20,16 @@ class setMorningViewController: UIViewController {
         self.morningAlertLabel.text = strDate
         NSUserDefaults.standardUserDefaults().setObject(morningAlert.date, forKey: "storedMorningAlert")
         NSUserDefaults.standardUserDefaults().setObject(dateFormatter.stringFromDate(morningAlert.date), forKey: "Morning Alert")
+        let notification = UILocalNotification()
+        notification.fireDate = morningAlert.date
+        notification.alertBody = "Hey, it's time to brush your teeth"
+        notification.alertAction = "slide to view"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.repeatInterval = NSCalendarUnit.Day
+        
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        
     }
     
 
