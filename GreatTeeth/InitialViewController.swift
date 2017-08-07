@@ -32,36 +32,36 @@ class InitialViewController: UIViewController {
         // Add background gradient
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
-        let color1 = UIColor(red:45/255.0, green:179/255.0, blue:183/255.0, alpha:1.0).CGColor as CGColorRef
-        let color2 = UIColor(red:32/255.0, green:107/255.0, blue:133/255.0, alpha:1.0).CGColor as CGColorRef
+        let color1 = UIColor(red:45/255.0, green:179/255.0, blue:183/255.0, alpha:1.0).cgColor as CGColor
+        let color2 = UIColor(red:32/255.0, green:107/255.0, blue:133/255.0, alpha:1.0).cgColor as CGColor
         gradientLayer.colors = [color1, color2]
         gradientLayer.locations = [0.0, 1.0]
-        view.layer.insertSublayer(gradientLayer, atIndex: 0)
+        view.layer.insertSublayer(gradientLayer, at: 0)
         
         // Remove navigation bar border
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
         // Reset angle of progress view
         circularProgressView?.angle = 0
     }
     
-    func prepareInterfaceForActivityType(type: ActivityType) {
+    func prepareInterfaceForActivityType(_ type: ActivityType) {
         switch type {
-        case .Brushing:
-            directionsLabel?.hidden = false
+        case .brushing:
+            directionsLabel?.isHidden = false
             progressBarImageView?.image = UIImage(named: "Progress Bar 2")
-            skipButton?.setTitle("Skip Section", forState: .Normal)
+            skipButton?.setTitle("Skip Section", for: UIControlState())
             break
-        case .Flossing:
-            directionsLabel?.hidden = false
+        case .flossing:
+            directionsLabel?.isHidden = false
             progressBarImageView?.image = UIImage(named: "Progress Bar 3")
-            skipButton?.setTitle("Skip Activity", forState: .Normal)
+            skipButton?.setTitle("Skip Activity", for: UIControlState())
             break
-        case .Rinsing:
-            directionsLabel?.hidden = false
+        case .rinsing:
+            directionsLabel?.isHidden = false
             progressBarImageView?.image = UIImage(named: "Progress Bar 4")
-            skipButton?.setTitle("Finish", forState: .Normal)
+            skipButton?.setTitle("Finish", for: UIControlState())
             break
         }
         
@@ -69,48 +69,50 @@ class InitialViewController: UIViewController {
     
     
     func setUpAsInitial() {
-        directionsLabel?.hidden = true
+        directionsLabel?.isHidden = true
         progressBarImageView?.image = UIImage(named: "Progress Bar 1")
         timerLabel?.text = "0"
-        startButton?.hidden = false
-        pauseButton?.hidden = true
-        skipButton?.hidden = true
-        settingsButton.enabled = true
-        settingsButton.tintColor = UIColor.whiteColor()
-        tipsButton.enabled = true
-        tipsButton.tintColor = UIColor.whiteColor()
-        circularProgressView?.animateToAngle(0.0, duration: 0.5, completion: nil)
+        startButton?.isHidden = false
+        pauseButton?.isHidden = true
+        skipButton?.isHidden = true
+        settingsButton.isEnabled = true
+        settingsButton.tintColor = UIColor.white
+        tipsButton.isEnabled = true
+        tipsButton.tintColor = UIColor.white
+//        circularProgressView?.animateToAngle(0.0, duration: 0.5, completion: nil)
+        circularProgressView?.animate(toAngle: 0.0, duration: 0.5, completion: nil)
     }
     
     // MARK: Lifecycle
     
-    func updateViewForTime(time: Int, percentage: Float, type: ActivityType, remainingRepetitions: Int, finished: Bool) {
+    func updateViewForTime(_ time: Int, percentage: Float, type: ActivityType, remainingRepetitions: Int, finished: Bool) {
         timerLabel!.text = String(time)
         
-        circularProgressView?.animateToAngle(Double(360.0 * (1 - percentage)), duration: 0.5, completion: nil)
+//        circularProgressView?.animateToAngle(Double(360.0 * (1 - percentage)), duration: 0.5, completion: nil)
+        circularProgressView?.animate(fromAngle:0, toAngle: (Double(360.0*(1-percentage))), duration: 0.5, completion: nil)
         
-        if finished && time == 0 {
+        if (finished==true) && (time == 0) {
             if let newActivityType = ActivityType(rawValue: type.rawValue + 1) {
                 prepareInterfaceForActivityType(newActivityType)
                 ActivityTracker.sharedInstance.startActivityForType(newActivityType, andCallback: updateViewForTime)
             } else {
-                var sessionsThisWeek = NSUserDefaults.standardUserDefaults().integerForKey("sessionsThisWeek")
-                var sessionsTotal = NSUserDefaults.standardUserDefaults().integerForKey("sessionsTotal")
-                var timeTotal = NSUserDefaults.standardUserDefaults().integerForKey("timeTotal")
+                var sessionsThisWeek = UserDefaults.standard.integer(forKey: "sessionsThisWeek")
+                var sessionsTotal = UserDefaults.standard.integer(forKey: "sessionsTotal")
+                var timeTotal = UserDefaults.standard.integer(forKey: "timeTotal")
                 
                 sessionsTotal += 1
                 sessionsThisWeek += 1
                 timeTotal += 3
                 
-                NSUserDefaults.standardUserDefaults().setInteger(sessionsThisWeek, forKey: "sessionsThisWeek")
-                NSUserDefaults.standardUserDefaults().setInteger(sessionsTotal, forKey: "sessionsTotal")
-                NSUserDefaults.standardUserDefaults().setInteger(timeTotal, forKey: "timeTotal")
+                UserDefaults.standard.set(sessionsThisWeek, forKey: "sessionsThisWeek")
+                UserDefaults.standard.set(sessionsTotal, forKey: "sessionsTotal")
+                UserDefaults.standard.set(timeTotal, forKey: "timeTotal")
                 
                 
-                performSegueWithIdentifier("PresentSummaryVC", sender: self)
+                performSegue(withIdentifier: "PresentSummaryVC", sender: self)
                 setUpAsInitial()
             }
-        } else if type == .Brushing {
+        } else if type == .brushing {
             switch remainingRepetitions {
             case 0:
                 directionsLabel?.text = "Lower Right Section"
@@ -128,9 +130,9 @@ class InitialViewController: UIViewController {
                 directionsLabel?.text = ""
                 break
             }
-            } else if type == .Flossing {
+            } else if type == .flossing {
                 directionsLabel?.text = "Floss!"
-            } else if type == .Rinsing {
+            } else if type == .rinsing {
                 directionsLabel?.text = "Rinse!"
                 
             
@@ -140,25 +142,25 @@ class InitialViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func startBrushingButtonDidPress() {
-        settingsButton.enabled = false
-        settingsButton.tintColor = UIColor.clearColor()
-        tipsButton.enabled = false
-        tipsButton.tintColor = UIColor.clearColor()
-        pauseButton?.hidden = false
-        skipButton?.hidden = false
-        startButton?.hidden = true
+        settingsButton.isEnabled = false
+        settingsButton.tintColor = UIColor.clear
+        tipsButton.isEnabled = false
+        tipsButton.tintColor = UIColor.clear
+        pauseButton?.isHidden = false
+        skipButton?.isHidden = false
+        startButton?.isHidden = true
         
-        prepareInterfaceForActivityType(ActivityType.Brushing)
-        ActivityTracker.sharedInstance.startActivityForType(ActivityType.Brushing, andCallback: updateViewForTime)
+        prepareInterfaceForActivityType(ActivityType.brushing)
+        ActivityTracker.sharedInstance.startActivityForType(ActivityType.brushing, andCallback: updateViewForTime)
     }
     
     @IBAction func pauseButtonDidPress() {
         if !ActivityTracker.sharedInstance.isPaused() {
             ActivityTracker.sharedInstance.pauseTimer()
-            pauseButton?.setTitle("Resume", forState: .Normal)
+            pauseButton?.setTitle("Resume", for: UIControlState())
         } else {
             ActivityTracker.sharedInstance.resumeTimer()
-            pauseButton?.setTitle("Pause Timer", forState: .Normal)
+            pauseButton?.setTitle("Pause Timer", for: UIControlState())
         }
     }
     
