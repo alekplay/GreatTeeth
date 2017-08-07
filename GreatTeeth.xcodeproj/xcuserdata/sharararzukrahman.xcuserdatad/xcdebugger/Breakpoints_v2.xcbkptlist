@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GreatTeeth/InitialViewController.swift"
-            timestampString = "523826986.301349"
+            timestampString = "523830068.433591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "updateViewForTime(_:percentage:type:remainingRepetitions:finished:)"
             landmarkType = "7">
          </BreakpointContent>

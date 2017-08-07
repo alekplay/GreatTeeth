@@ -79,7 +79,6 @@ class InitialViewController: UIViewController {
         settingsButton.tintColor = UIColor.white
         tipsButton.isEnabled = true
         tipsButton.tintColor = UIColor.white
-//        circularProgressView?.animateToAngle(0.0, duration: 0.5, completion: nil)
         circularProgressView?.animate(toAngle: 0.0, duration: 0.5, completion: nil)
     }
     
@@ -88,8 +87,7 @@ class InitialViewController: UIViewController {
     func updateViewForTime(_ time: Int, percentage: Float, type: ActivityType, remainingRepetitions: Int, finished: Bool) {
         timerLabel!.text = String(time)
         
-//        circularProgressView?.animateToAngle(Double(360.0 * (1 - percentage)), duration: 0.5, completion: nil)
-        circularProgressView?.animate(fromAngle:0, toAngle: (Double(360.0*(1-percentage))), duration: 0.5, completion: nil)
+        circularProgressView?.animate(toAngle: (Double(360.0*(1-percentage))), duration: 0.5, completion: nil)
         
         if (finished==true) && (time == 0) {
             if let newActivityType = ActivityType(rawValue: type.rawValue + 1) {
