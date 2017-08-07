@@ -21,9 +21,9 @@ class SummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let sessionsThisWeek = NSUserDefaults.standardUserDefaults().integerForKey("sessionsThisWeek")
-        let sessionsTotal = NSUserDefaults.standardUserDefaults().integerForKey("sessionsTotal")
-        let timeTotal = NSUserDefaults.standardUserDefaults().integerForKey("timeTotal")
+        let sessionsThisWeek = UserDefaults.standard.integer(forKey: "sessionsThisWeek")
+        let sessionsTotal = UserDefaults.standard.integer(forKey: "sessionsTotal")
+        let timeTotal = UserDefaults.standard.integer(forKey: "timeTotal")
         
         sessionsThisWeekLabel?.text = String(sessionsThisWeek)
         sessionsTotalLabel?.text = String(sessionsTotal)
@@ -44,12 +44,12 @@ class SummaryViewController: UIViewController {
     }
     
     @IBAction func closeButtonDidPress() {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func shareButtonDidPress() {
         let activityViewController = UIActivityViewController(activityItems: [achievementNameLabel!.text!], applicationActivities: nil)
-        presentViewController(activityViewController, animated: true, completion: nil)
+        present(activityViewController, animated: true, completion: nil)
     }
     
 }

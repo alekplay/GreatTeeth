@@ -13,7 +13,7 @@ class timeTillReplacementViewController: UIViewController {
     @IBOutlet var timeTillReplacementLabel: UILabel!
     
     @IBOutlet var sliderValue: UISlider!
-    @IBAction func valueChanged(sender: UISlider) {
+    @IBAction func valueChanged(_ sender: UISlider) {
         let selectedValue = Int(sender.value)
         if selectedValue < 26 && selectedValue != 1 {
             timeTillReplacementLabel.text = "Alert me in " + String(selectedValue) + " weeks"
@@ -22,14 +22,14 @@ class timeTillReplacementViewController: UIViewController {
         } else if selectedValue == 26 {
             timeTillReplacementLabel.text = "Never alert me"
         }
-        NSUserDefaults.standardUserDefaults().setInteger(selectedValue, forKey: "selectedValue")
+        UserDefaults.standard.set(selectedValue, forKey: "selectedValue")
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let setValue =  NSUserDefaults.standardUserDefaults().integerForKey("selectedValue")
+        let setValue =  UserDefaults.standard.integer(forKey: "selectedValue")
         sliderValue.value=Float(setValue)
         if setValue < 26 && setValue != 1 {
             timeTillReplacementLabel.text = "Alert me in " + String(setValue) + " weeks"
@@ -44,21 +44,21 @@ class timeTillReplacementViewController: UIViewController {
         // Add background gradient
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
-        let color1 = UIColor(red:45/255.0, green:179/255.0, blue:183/255.0, alpha:1.0).CGColor as CGColorRef
-        let color2 = UIColor(red:32/255.0, green:107/255.0, blue:133/255.0, alpha:1.0).CGColor as CGColorRef
+        let color1 = UIColor(red:45/255.0, green:179/255.0, blue:183/255.0, alpha:1.0).cgColor as CGColor
+        let color2 = UIColor(red:32/255.0, green:107/255.0, blue:133/255.0, alpha:1.0).cgColor as CGColor
         gradientLayer.colors = [color1, color2]
         gradientLayer.locations = [0.0, 1.0]
-        view.layer.insertSublayer(gradientLayer, atIndex: 0)
+        view.layer.insertSublayer(gradientLayer, at: 0)
         
         
         
         // Remove navigation bar border
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
         // Do any additional setup after loading the view.
         
-        self.navigationController?.navigationBar.tintColor=UIColor.whiteColor()
+        self.navigationController?.navigationBar.tintColor=UIColor.white
 
 
         // Do any additional setup after loading the view.

@@ -13,54 +13,54 @@ class setEveningViewController: UIViewController {
     
     @IBOutlet var eveningAlertLabel: UILabel!
     @IBOutlet var eveningAlert: UIDatePicker!
-    @IBAction func changeEveningAlert(sender: AnyObject) {
-        let dateFormatterEvening = NSDateFormatter()
+    @IBAction func changeEveningAlert(_ sender: AnyObject) {
+        let dateFormatterEvening = DateFormatter()
         dateFormatterEvening.dateFormat = "HH:mm"
-        let strDateEvening = "You have selected " + dateFormatterEvening.stringFromDate(eveningAlert.date)
+        let strDateEvening = "You have selected " + dateFormatterEvening.string(from: eveningAlert.date)
         print(eveningAlert.date)
         self.eveningAlertLabel.text = strDateEvening
-        NSUserDefaults.standardUserDefaults().setObject(eveningAlert.date, forKey: "storedEveningAlert")
-        NSUserDefaults.standardUserDefaults().setObject(dateFormatterEvening.stringFromDate(eveningAlert.date), forKey: "Evening Alert")
+        UserDefaults.standard.set(eveningAlert.date, forKey: "storedEveningAlert")
+        UserDefaults.standard.set(dateFormatterEvening.string(from: eveningAlert.date), forKey: "Evening Alert")
         let notification = UILocalNotification()
         notification.fireDate = eveningAlert.date
         notification.alertBody = "Hey, it's time to brush your teeth"
         notification.alertAction = "slide to view"
         notification.soundName = UILocalNotificationDefaultSoundName
-        notification.repeatInterval = NSCalendarUnit.Day
+        notification.repeatInterval = NSCalendar.Unit.day
         
         
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        UIApplication.shared.scheduleLocalNotification(notification)
         
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let eveningTime = NSUserDefaults.standardUserDefaults().objectForKey("storedEveningAlert") {
-            eveningAlert.date = eveningTime as! NSDate
+        if let eveningTime = UserDefaults.standard.object(forKey: "storedEveningAlert") {
+            eveningAlert.date = eveningTime as! Date
         }
-        if let eveningAlertValue = NSUserDefaults.standardUserDefaults().stringForKey("Evening Alert") {
+        if let eveningAlertValue = UserDefaults.standard.string(forKey: "Evening Alert") {
             self.eveningAlertLabel.text = "You have selected " + eveningAlertValue
         }
         
         // Add background gradient
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
-        let color1 = UIColor(red:45/255.0, green:179/255.0, blue:183/255.0, alpha:1.0).CGColor as CGColorRef
-        let color2 = UIColor(red:32/255.0, green:107/255.0, blue:133/255.0, alpha:1.0).CGColor as CGColorRef
+        let color1 = UIColor(red:45/255.0, green:179/255.0, blue:183/255.0, alpha:1.0).cgColor as CGColor
+        let color2 = UIColor(red:32/255.0, green:107/255.0, blue:133/255.0, alpha:1.0).cgColor as CGColor
         gradientLayer.colors = [color1, color2]
         gradientLayer.locations = [0.0, 1.0]
-        view.layer.insertSublayer(gradientLayer, atIndex: 0)
+        view.layer.insertSublayer(gradientLayer, at: 0)
         
         
         
         // Remove navigation bar border
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
         // Do any additional setup after loading the view.
         
-        self.navigationController?.navigationBar.tintColor=UIColor.whiteColor()
+        self.navigationController?.navigationBar.tintColor=UIColor.white
         
         // Do any additional setup after loading the view.
 
