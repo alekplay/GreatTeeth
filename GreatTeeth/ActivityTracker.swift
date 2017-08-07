@@ -7,35 +7,59 @@
 //
 
 import Foundation
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l >= r
+  default:
+    return !(lhs < rhs)
+  }
+}
+
 
 enum ActivityType: Int {
-    case Brushing = 1, Flossing, Rinsing
+    case brushing = 1, flossing, rinsing
 }
 
 class ActivityTracker: NSObject {
     
     // MARK: Properties
     
-    let activityDurations = [ActivityType.Brushing: 30, ActivityType.Flossing: 60, ActivityType.Rinsing: 30]
-    let activityRepetitions = [ActivityType.Brushing: 4, ActivityType.Flossing: 1, ActivityType.Rinsing: 1]
+    let activityDurations = [ActivityType.brushing: 30, ActivityType.flossing: 60, ActivityType.rinsing: 30]
+    let activityRepetitions = [ActivityType.brushing: 4, ActivityType.flossing: 1, ActivityType.rinsing: 1]
     
-    var currentActivity: ActivityType = .Brushing
+    var currentActivity: ActivityType = .brushing
     var currentTime = 0
     var currentRepetition = 0
-    var timer = NSTimer()
+    var timer = Timer()
     var loopCallback: ((Int, Float, ActivityType, Int, Bool) -> Void)?
     
     // MARK: Initialization
     
     static let sharedInstance = ActivityTracker()
-    private override init() {
+    fileprivate override init() {
         super.init()
         
     }
     
     func setup() {
         timer.invalidate()
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(ActivityTracker.timerloop), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ActivityTracker.timerloop), userInfo: nil, repeats: true)
     }
     
     func timerloop() {
@@ -58,7 +82,7 @@ class ActivityTracker: NSObject {
         }
     }
     
-    func startActivityForType(type: ActivityType, andCallback callback: (Int, Float, ActivityType, Int, Bool) -> Void) {
+    func startActivityForType(_ type: ActivityType, andCallback callback: @escaping (Int, Float, ActivityType, Int, Bool) -> Void) {
         currentTime = 0
         currentRepetition = 1
         currentActivity = type
@@ -76,7 +100,7 @@ class ActivityTracker: NSObject {
     }
     
     func isPaused() -> Bool {
-        return !timer.valid
+        return !timer.isValid
     }
     
     func skipToNext() {

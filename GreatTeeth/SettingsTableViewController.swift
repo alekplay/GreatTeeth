@@ -10,61 +10,61 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
     
-    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
-        header.textLabel!.textColor = UIColor.whiteColor() //make the text white
+        header.textLabel!.textColor = UIColor.white //make the text white
         header.alpha = 0.8 //make the header transparent
     }
-    override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         let footer: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a
-        footer.textLabel!.textColor = UIColor.whiteColor() //make the text white
-        footer.textLabel!.textAlignment = .Center
+        footer.textLabel!.textColor = UIColor.white //make the text white
+        footer.textLabel!.textAlignment = .center
         footer.alpha = 0.8 //make the header transparent
     }
 
     
-    @IBAction func replaceBrushHead(sender: UIButton) {
+    @IBAction func replaceBrushHead(_ sender: UIButton) {
         
-        let alertController = UIAlertController(title: "Confirm", message: "", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "Confirm", message: "", preferredStyle: .alert)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) in
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction!) in
             
         }
         alertController.addAction(cancelAction)
         
-        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action:UIAlertAction!) in
-            let date = NSDate()
-            let calendar = NSCalendar.currentCalendar()
-            let components = calendar.components([.Day , .Month , .Year], fromDate: date)
+        let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+            let date = Date()
+            let calendar = Calendar.current
+            let components = (calendar as NSCalendar).components([.day , .month , .year], from: date)
             let year =  components.year
             let month = components.month
             let day = components.day
-            self.replacementDate.text=String(month) + "/" + String(day) + "/" + String(year)
-            NSUserDefaults.standardUserDefaults().setObject(self.replacementDate.text, forKey: "lastReplaced")
-            NSUserDefaults.standardUserDefaults().setObject(date, forKey: "dateLastReplaced")
+            self.replacementDate.text=String(describing: month) + "/" + String(describing: day) + "/" + String(describing: year)
+            UserDefaults.standard.set(self.replacementDate.text, forKey: "lastReplaced")
+            UserDefaults.standard.set(date, forKey: "dateLastReplaced")
             
-            let daysToAdd = 7 * NSUserDefaults.standardUserDefaults().integerForKey("selectedValue")
-            let futureDate = NSCalendar.currentCalendar().dateByAddingUnit(
-                .Day,
+            let daysToAdd = 7 * UserDefaults.standard.integer(forKey: "selectedValue")
+            let futureDate = (Calendar.current as NSCalendar).date(
+                byAdding: .day,
                 value: daysToAdd,
-                toDate: date,
-                options: NSCalendarOptions(rawValue: 0))
+                to: date,
+                options: NSCalendar.Options(rawValue: 0))
             
-            let calendart = NSCalendar.currentCalendar()
-            let componentst = calendart.components([.Day , .Month , .Year], fromDate: futureDate!)
+            let calendart = Calendar.current
+            let componentst = (calendart as NSCalendar).components([.day , .month , .year], from: futureDate!)
             let yeart =  componentst.year
             let montht = componentst.month
             let dayt = componentst.day
             if daysToAdd == 182 {
                 self.toBeReplaced.text="-"
             } else if daysToAdd < 182 {
-            self.toBeReplaced.text=String(montht) + "/" + String(dayt) + "/" + String(yeart)
+            self.toBeReplaced.text=String(describing: montht) + "/" + String(describing: dayt) + "/" + String(describing: yeart)
             }
 
         }
         alertController.addAction(OKAction)
         
-        self.presentViewController(alertController, animated: true, completion:nil)
+        self.present(alertController, animated: true, completion:nil)
         
     }
     
@@ -73,23 +73,23 @@ class SettingsTableViewController: UITableViewController {
     
     @IBOutlet var toBeReplaced: UILabel!
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
         
         
-        if let replacedDate = NSUserDefaults.standardUserDefaults().stringForKey("lastReplaced") {
+        if let replacedDate = UserDefaults.standard.string(forKey: "lastReplaced") {
             replacementDate.text = replacedDate
             
-            if let retrievedComponents = NSUserDefaults.standardUserDefaults().objectForKey("dateLastReplaced") {
-                let daysToAdd = 7 * NSUserDefaults.standardUserDefaults().integerForKey("selectedValue")
-                let futureDate = NSCalendar.currentCalendar().dateByAddingUnit(
-                    .Day,
+            if let retrievedComponents = UserDefaults.standard.object(forKey: "dateLastReplaced") {
+                let daysToAdd = 7 * UserDefaults.standard.integer(forKey: "selectedValue")
+                let futureDate = (Calendar.current as NSCalendar).date(
+                    byAdding: .day,
                     value: daysToAdd,
-                    toDate: retrievedComponents as! NSDate,
-                    options: NSCalendarOptions(rawValue: 0))
+                    to: retrievedComponents as! Date,
+                    options: NSCalendar.Options(rawValue: 0))
                 
-                let calendar = NSCalendar.currentCalendar()
-                let components = calendar.components([.Day , .Month , .Year], fromDate: futureDate!)
+                let calendar = Calendar.current
+                let components = (calendar as NSCalendar).components([.day , .month , .year], from: futureDate!)
                 let year =  components.year
                 let month = components.month
                 let day = components.day
@@ -97,7 +97,7 @@ class SettingsTableViewController: UITableViewController {
                 if daysToAdd == 182 {
                     toBeReplaced.text="-"
                 } else if daysToAdd < 182 {
-                    toBeReplaced.text=String(month) + "/" + String(day) + "/" + String(year)
+                    toBeReplaced.text=String(describing: month) + "/" + String(describing: day) + "/" + String(describing: year)
                     self.scheduleLocal(futureDate!)
                 }
             }
@@ -110,33 +110,33 @@ class SettingsTableViewController: UITableViewController {
         // Add background gradient
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
-        let color1 = UIColor(red:45/255.0, green:179/255.0, blue:183/255.0, alpha:1.0).CGColor as CGColorRef
-        let color2 = UIColor(red:32/255.0, green:107/255.0, blue:133/255.0, alpha:1.0).CGColor as CGColorRef
+        let color1 = UIColor(red:45/255.0, green:179/255.0, blue:183/255.0, alpha:1.0).cgColor as CGColor
+        let color2 = UIColor(red:32/255.0, green:107/255.0, blue:133/255.0, alpha:1.0).cgColor as CGColor
         gradientLayer.colors = [color1, color2]
         gradientLayer.locations = [0.0, 1.0]
-        view.layer.insertSublayer(gradientLayer, atIndex: 0)
+        view.layer.insertSublayer(gradientLayer, at: 0)
         
         // Remove navigation bar border
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
 
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     @IBAction func doneButtonDidPress() {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
-    func scheduleLocal(date:NSDate) {
-        let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
+    func scheduleLocal(_ date:Date) {
+        let settings = UIApplication.shared.currentUserNotificationSettings
         
-        if settings!.types == .None {
-            let ac = UIAlertController(title: "Can't schedule", message: "Either we don't have permission to schedule notifications, or we haven't asked yet.", preferredStyle: .Alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            presentViewController(ac, animated: true, completion: nil)
+        if settings!.types == UIUserNotificationType() {
+            let ac = UIAlertController(title: "Can't schedule", message: "Either we don't have permission to schedule notifications, or we haven't asked yet.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(ac, animated: true, completion: nil)
             return
         }
         
@@ -146,7 +146,7 @@ class SettingsTableViewController: UITableViewController {
         notification.alertAction = "slide to view"
         notification.soundName = UILocalNotificationDefaultSoundName
     
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        UIApplication.shared.scheduleLocalNotification(notification)
     }
     
 
