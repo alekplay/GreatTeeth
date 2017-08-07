@@ -89,7 +89,7 @@ class InitialViewController: UIViewController {
         timerLabel!.text = String(time)
         
 //        circularProgressView?.animateToAngle(Double(360.0 * (1 - percentage)), duration: 0.5, completion: nil)
-        circularProgressView?.animate(toAngle: (Double(360.0*(1-percentage)), duration: 0.5, completion: nil)
+        circularProgressView?.animate(fromAngle:0, toAngle: (Double(360.0*(1-percentage))), duration: 0.5, completion: nil)
         
         if (finished==true) && (time == 0) {
             if let newActivityType = ActivityType(rawValue: type.rawValue + 1) {
