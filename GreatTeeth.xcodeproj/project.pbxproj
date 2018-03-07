@@ -171,7 +171,6 @@
 				TargetAttributes = {
 					287780DB1CC9B5BF0084F161 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = DZY9QYJG2F;
 						LastSwiftMigration = 0820;
 					};
 				};
@@ -340,7 +339,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DZY9QYJG2F;
 				INFOPLIST_FILE = GreatTeeth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.aleksanders.GreatTeeth;
@@ -353,7 +351,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DZY9QYJG2F;
 				INFOPLIST_FILE = GreatTeeth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.aleksanders.GreatTeeth;
